@@ -1,0 +1,13 @@
+.text-old {
+    font-family: "UnifrakturCook", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+.iris{
+    color: black;
+    text-shadow: white 0px 0px 2px;
+}
+.ink{
+    color: white;
+    text-shadow: black 0px 0px 2px;
+}
