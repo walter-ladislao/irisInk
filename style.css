@@ -1,8 +1,52 @@
+:root {
+    --colore-primario: #007bff; /* Blu */
+    --colore-secondario: #6c757d; /* Grigio */
+    --colore-terziario: #28a745; /* Verde */
+    --colore-testo: #212529; /* Nero */
+    --colore-sfondo: #f8f9fa; /* Bianco */
+  }
+  
+
 .text-old {
     font-family: "UnifrakturCook", cursive;
     font-weight: 700;
     font-style: normal;
 }
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    background-color: var(--colore-sfondo);
+    z-index: 999;
+}
+.myNavLink{
+    color: black;
+    font-size: xx-large;
+    
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition: 0.1s;
+}
+
+.myNavLink:hover{
+    color: white;    
+    text-shadow: black 0px 0px 1px,black 5px 0px 1px;
+    
+    
+}
+.myNavLink::after{
+    color: white;
+}
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: bold;
+}
+
 .iris{
     color: black;
     text-shadow: white 0px 0px 2px;
@@ -10,4 +54,13 @@
 .ink{
     color: white;
     text-shadow: black 0px 0px 2px;
+}
+
+.bg-header{
+    width: 500px;
+    height: 500px;
+    background-image: url('/tipa.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
