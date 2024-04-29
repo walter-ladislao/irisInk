@@ -3,9 +3,12 @@
     --colore-secondario: #6c757d; /* Grigio */
     --colore-terziario: #28a745; /* Verde */
     --colore-testo: #212529; /* Nero */
-    --colore-sfondo: #f8f9fa; /* Bianco */
-  }
-  
+    --biancoo: #f8f9fa; /* Bianco */
+}
+
+body{
+    background-color: var(--biancoo);
+}
 
 .text-old {
     font-family: "UnifrakturCook", cursive;
@@ -18,9 +21,18 @@ a{
 }
 
 nav{
-    background-color: var(--colore-sfondo);
+    background-color: var(--biancoo);
     z-index: 999;
 }
+
+#myNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease; /* Aggiungi una transizione con un effetto di easing */
+}
+
 .myNavLink{
     color: black;
     font-size: xx-large;
@@ -32,9 +44,7 @@ nav{
 
 .myNavLink:hover{
     color: white;    
-    text-shadow: black 0px 0px 1px,black 5px 0px 1px;
-    
-    
+    text-shadow: black 0px 0px 1px,black 5px 0px 1px;    
 }
 .myNavLink::after{
     color: white;
@@ -53,14 +63,50 @@ nav{
 }
 .ink{
     color: white;
-    text-shadow: black 0px 0px 2px;
+    text-shadow: black 0px 0px 3px,black 3px 0px 1px;   
 }
 
 .bg-header{
-    width: 500px;
-    height: 500px;
-    background-image: url('./tipa.png');
-    background-position: center;
+    height: 600px;
+    
+}
+
+.bkground{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(248,249,250) 100%), url('./tipa.png');
+    background-position-x: right;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 100%;
+}
+
+.titolo{
+    font-size: 150px;
+}
+
+.myWorkCard {
+    position: relative;
+    overflow: hidden; /* Assicura che il contenuto non fuoriesca dall'elemento */
+}
+
+.myhover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(70, 8, 42, 0.415),rgb(248,249,250)  100%);
+    transition: opacity 0.3s; /* Applica la transizione sull'opacità */
+    opacity: 1; /* Inizialmente invisibile */
+}
+
+.myWorkCard:hover .myhover {
+    opacity: 0; /* Rendi l'elemento visibile al passaggio del mouse sull'elemento .myWorkCard */
+}
+
+@media screen and (max-width: 768px) {
+    .titolo{
+        font-size: 100px;
+    }
+    .bg-header{
+        height: 500px;
+        
+    }
 }
