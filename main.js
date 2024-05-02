@@ -1,4 +1,8 @@
 window.addEventListener('scroll', function() {
+    if (typeof this.lastScroll === 'undefined') {
+        this.lastScroll = 0;
+    }
+
     var navbar = document.getElementById('myNav');
     
     if (window.scrollY > this.lastScroll) {        
@@ -7,4 +11,72 @@ window.addEventListener('scroll', function() {
         navbar.style.top = '0';
     }
     this.lastScroll = window.scrollY;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var image = document.getElementById('image');
+
+    // Aggiungi un listener per l'evento di click all'immagine
+    image.addEventListener('click', function(event) {
+        // Seleziona direttamente l'elemento dropdown al momento del click
+        var dropdown = document.getElementById('dropdown');
+        
+        // Verifica se il menu a tendina è già visibile
+        if (dropdown.classList.contains('show')) {
+            // Se è già visibile, nascondilo
+            dropdown.classList.remove('show');
+        } else {
+            // Altrimenti, se è nascosto, mostralo
+            dropdown.classList.add('show');
+        }
+        // Previeni il comportamento predefinito del click sull'immagine
+        event.preventDefault();
+    });
+
+    // Aggiungi un listener per chiudere il menu a tendina quando si fa clic al di fuori di esso
+    document.addEventListener('click', function(event) {
+        var dropdown = document.getElementById('dropdown');
+        if (!dropdown.contains(event.target) && event.target !== image) {
+            dropdown.classList.remove('show');
+        }
+    });
+});
+
+function startAnimation() {
+    var image = document.getElementById("image");
+    var animationInterval = setInterval(function() {
+        image.classList.add("pulse-animation");
+        setTimeout(function() {
+            image.classList.remove("pulse-animation");
+        }, 1000); // Durata dell'animazione in millisecondi (2 secondi)
+    }, 10000); // Intervallo tra le animazioni in millisecondi (30 secondi)
+}
+
+// Avvio dell'animazione quando il documento è pronto
+document.addEventListener("DOMContentLoaded", function() {
+    startAnimation();
+});
+
+// Funzione per eseguire il contatore
+function startCounter() {
+    var counterElement = document.getElementById('counter');
+    var currentCount = 0;
+    var targetCount = 3000;
+    var interval = 10; // Intervallo di aggiornamento in millisecondi
+    
+    var increment = Math.ceil(targetCount / (1000 / interval));
+    
+    var counterInterval = setInterval(function() {
+        currentCount += increment;
+        if (currentCount > targetCount) {
+            currentCount = targetCount;
+            clearInterval(counterInterval);
+        }
+        counterElement.textContent = currentCount;
+    }, interval);
+}
+
+// Avvio del contatore quando il documento è pronto
+document.addEventListener('DOMContentLoaded', function() {
+    startCounter();
 });
