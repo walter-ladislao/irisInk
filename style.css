@@ -1,9 +1,9 @@
 :root {
-    --main-red: #8c1042; /* Blu */
-    --colore-secondario: #6c757d; /* Grigio */
-    --colore-terziario: #28a745; /* Verde */
-    --colore-testo: #212529; /* Nero */
-    --biancoo: #f8f9fa; /* Bianco */
+    --main-red: #8c1042; 
+    --colore-secondario: #6c757d; 
+    --colore-terziario: #28a745; 
+    --colore-testo: #212529; 
+    --biancoo: #f8f9fa;
 }
 
 body{
@@ -64,6 +64,19 @@ nav{
     transition: top 0.3s ease; /* Aggiungi una transizione con un effetto di easing */
 }
 
+.myText{
+    color: var(--colore-testo);
+}
+
+.myText:hover{
+    color: white;    
+    text-shadow: black 0px 0px 10px,var(--main-red) 0px 0px 10px;
+}
+
+.myText:focus{
+    color: var(--main-red);    
+}
+
 .myNavLink{
     color: black;
     font-size: xx-large;
@@ -73,9 +86,11 @@ nav{
     transition: 0.1s;
 }
 
+
 .myNavLink:hover{
     color: white;    
     text-shadow: black 0px 0px 1px,black 5px 0px 1px;    
+    
 }
 .myNavLink::after{
     color: white;
@@ -114,6 +129,10 @@ nav{
     background-size: auto 100%;
 }
 
+.bkground1{
+    background: rgb(248,249,250);
+    background: linear-gradient(180deg, rgba(248,249,250,1) 0%, rgba(33,37,41,0.5298494397759104) 100%);
+}
 .titolo{
     font-size: 150px;
 }
@@ -238,7 +257,7 @@ nav{
 
 @media screen and (max-width: 768px) {
     .titolo{
-        font-size: 100px;
+        font-size: 80px;
     }
     .bg-header{
         height: 100vh;
@@ -254,10 +273,9 @@ nav{
     
     .dropdown-content {
         top: -85px; /* Modifica l'offset verticale per posizionare il menu sopra l'immagine */
-        right: -80px; /* Modifica l'offset orizzontale per posizionare il menu a destra dell'immagine */
+        right: -100px; /* Modifica l'offset orizzontale per posizionare il menu a destra dell'immagine */
         background-color: #f9f9f9;
         min-width: 100px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     .laRow{
         height: 200px;
