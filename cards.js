@@ -9,8 +9,7 @@ const productData = [
     {
         id: 2,
         name: "Alieno",
-        image: "aliens.jpg",
-        price: 169,
+        image: "aliens.jpg";
         rating: 5,       
     },
     {
@@ -18,7 +17,6 @@ const productData = [
         name: "Astronauta",
         image:        "astronauts.jpg",
         price: 170,
-        rating: 4,
         timeLeft: 21,
         totalSales: 6347 
     },
@@ -26,7 +24,6 @@ const productData = [
         id: 4,
         name: "Occhio",
         image:        "eye.jpg",
-        price: 170,
         rating: 4,
         timeLeft: 21,
         totalSales: 6347 
@@ -35,7 +32,6 @@ const productData = [
         id: 5,
         name: "Bussola",
         image:        "bussola.jpg",
-        price: 170,
         rating: 4,
         timeLeft: 21,
         totalSales: 6347 
@@ -44,7 +40,6 @@ const productData = [
         id: 6,
         name: "Pesci",
         image:        "pieces.jpg",
-        price: 170,
         rating: 4,
         timeLeft: 21,
         totalSales: 6347 
@@ -53,7 +48,6 @@ const productData = [
         id: 7,
         name: "Ancora",
         image:        "marines.jpg",
-        price: 170,
         rating: 4,
         timeLeft: 21,
         totalSales: 6347 
@@ -62,7 +56,6 @@ const productData = [
         id: 8,
         name: "Sole",
         image:        "sun.jpg",
-        price: 170,
         rating: 4,
         timeLeft: 21,
         totalSales: 6347 
@@ -75,7 +68,7 @@ let cardsCol = productData.map(card=>
     `
     <div class="col-12">
         <div class="myTatCard">
-            <div>
+            
         </div>
     </div>
     `
