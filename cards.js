@@ -9,7 +9,7 @@ const productData = [
     {
         id: 2,
         name: "Alieno",
-        image: "aliens.jpg";
+        image: "aliens.jpg",
         rating: 5,       
     },
     {
@@ -17,8 +17,7 @@ const productData = [
         name: "Astronauta",
         image:        "astronauts.jpg",
         price: 170,
-        timeLeft: 21,
-        totalSales: 6347 
+        rating: 5, 
     },
     {
         id: 4,
@@ -26,7 +25,6 @@ const productData = [
         image:        "eye.jpg",
         rating: 4,
         timeLeft: 21,
-        totalSales: 6347 
     },
     {
         id: 5,
@@ -34,15 +32,13 @@ const productData = [
         image:        "bussola.jpg",
         rating: 4,
         timeLeft: 21,
-        totalSales: 6347 
     } ,
     {
         id: 6,
         name: "Pesci",
         image:        "pieces.jpg",
         rating: 4,
-        timeLeft: 21,
-        totalSales: 6347 
+        timeLeft: 21, 
     } ,
     {
         id: 7,
@@ -50,27 +46,25 @@ const productData = [
         image:        "marines.jpg",
         rating: 4,
         timeLeft: 21,
-        totalSales: 6347 
     } ,
     {
         id: 8,
         name: "Sole",
         image:        "sun.jpg",
         rating: 4,
-        timeLeft: 21,
-        totalSales: 6347 
+        timeLeft: 21, 
     }   
 ];
 
-let cardsRow = document.getElementById('cardsRow');
+// let cardsRow = document.getElementById('cardsRow');
 
-let cardsCol = productData.map(card=>
-    `
-    <div class="col-12">
-        <div class="myTatCard">
+// let cardsCol = productData.map(card=>
+//     `
+//     <div class="col-12">
+//         <div class="myTatCard">
             
-        </div>
-    </div>
-    `
-);
+//         </div>
+//     </div>
+//     `
+// );
 
