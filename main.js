@@ -2,7 +2,7 @@ window.addEventListener('scroll', function() {
     if (typeof this.lastScroll === 'undefined') {
         this.lastScroll = 0;
     }
-
+    
     var navbar = document.getElementById('myNav');
     
     if (window.scrollY > this.lastScroll) {        
@@ -15,7 +15,7 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var image = document.getElementById('image');
-
+    
     // Aggiungi un listener per l'evento di click all'immagine
     image.addEventListener('click', function(event) {
         // Seleziona direttamente l'elemento dropdown al momento del click
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Previeni il comportamento predefinito del click sull'immagine
         event.preventDefault();
     });
-
+    
     // Aggiungi un listener per chiudere il menu a tendina quando si fa clic al di fuori di esso
     document.addEventListener('click', function(event) {
         var dropdown = document.getElementById('dropdown');
@@ -80,3 +80,49 @@ function startCounter() {
 document.addEventListener('DOMContentLoaded', function() {
     startCounter();
 });
+
+// Seleziona il bottone
+var button = document.getElementById('buttonCard');
+
+// Aggiungi un listener per l'evento di click al bottone
+button.addEventListener('click', function() {
+    // Seleziona l'elemento della row
+    var laRow = document.querySelector('.laRow');
+    
+    // Se la classe "expanded" è presente, significa che la sezione è aperta
+    var isExpanded = laRow.classList.contains('expanded');
+    
+    // In base allo stato attuale, apri o chiudi la sezione
+    if (!isExpanded) {
+        // Se la sezione non è aperta, aprila
+        laRow.style.overflow = 'visible';
+        laRow.style.height = 'auto';
+        laRow.classList.add('expanded'); // Aggiungi la classe "expanded" per segnalare che la sezione è aperta
+        // Seleziona direttamente l'elemento dropdown al momento del click
+        button.textContent = 'Mostra meno';
+        var dropdown = document.getElementById('dropdown');
+        // Verifica se il menu a tendina è già visibile
+        if (!dropdown.classList.contains('show')) {
+            // Se è nascosto, mostralo
+            dropdown.classList.add('show');
+        }
+    } else {
+        // Altrimenti, chiudila
+        laRow.style.overflow = 'hidden';
+        if (window.innerWidth <= 576) {
+            laRow.style.height = '200px'; // Altezza per schermi stretti
+        } else {
+            laRow.style.height = '450px'; // Altezza predefinita
+        } // O qualsiasi sia l'altezza predefinita
+        laRow.classList.remove('expanded'); // Rimuovi la classe "expanded" per segnalare che la sezione è chiusa
+        // Seleziona direttamente l'elemento dropdown al momento del click
+        button.textContent = 'Mostra di più';
+        var dropdown = document.getElementById('dropdown');
+        // Verifica se il menu a tendina è già visibile
+        if (dropdown.classList.contains('show')) {
+            // Se è visibile, nascondilo
+            dropdown.classList.remove('show');
+        }
+    }
+});
+
